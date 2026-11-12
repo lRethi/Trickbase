@@ -1,0 +1,18 @@
+{
+  "id": "base",
+  "name": "Coleção Base",
+  "version": 1,
+  "cards": [
+    {
+      "id": "base-001",
+      "name": "Exemplo",
+      "type": "creature",
+      "rarity": "common",
+      "cost": 3,
+      "colors": ["azul"],
+      "text": "Texto de exemplo da carta.",
+      "keywords": ["barreira"],
+      "image": "assets/cards/base/base-001.png"
+    }
+  ]
+}

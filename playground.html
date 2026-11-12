@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171615">
+  <meta name="description" content="PLACEHOLDER">
+  <title>Playground — Trick</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/tools.css">
+  <script type="module" src="js/playground.js"></script>
+</head>
+<body data-page="playground">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Trick — início"><img class="brand-logo" src="assets/images/logo.webp" alt="Trick"><span class="brand-fallback">trick<span class="brand-period">.</span></span></a>
+      <button class="mobile-menu-button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span></button>
+      <nav class="site-navigation" id="site-navigation" aria-label="Navegação principal"><a class="nav-link" href="index.html">Início</a><a class="nav-link" href="glossario.html">Cartas</a><a class="nav-link" href="deckbuilder.html">Deckbuilder</a><a class="nav-link" href="tiermaker.html">Tiermaker</a><a class="nav-link active" href="playground.html">Playground</a></nav>
+      <a class="header-action" href="glossario.html">Explorar cartas <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main class="page-width tool-page playground-page">
+    <section class="page-intro tool-page-intro">
+      <div><p class="eyebrow"><span class="eyebrow-flower">✳</span> PLACEHOLDER</p><h1>Playground<span class="title-period">.</span></h1><p>PLACEHOLDER</p></div>
+      <div class="tool-page-actions"><span class="playground-count"><strong id="playground-count">0</strong> cartas na mesa</span><button class="button button-secondary button-small" id="playground-clear">Limpar mesa</button></div>
+    </section>
+
+    <section class="playground-layout">
+      <div class="playground-table-panel">
+        <header class="tool-panel-heading"><div><h2>Mesa</h2><p>PLACEHOLDER</p></div><span class="table-grip" aria-hidden="true">✳</span></header>
+        <div class="playground-board" id="playground-board" aria-label="Mesa de cartas. Arraste cartas para fora da área para removê-las.">
+          <div class="playground-board-empty" id="playground-empty"><span>✳</span><p>PLACEHOLDER</p></div>
+        </div>
+        <p class="playground-hint">PLACEHOLDER</p>
+      </div>
+
+      <aside class="playground-catalog-panel">
+        <header class="tool-panel-heading"><div><h2>Catálogo</h2><p><span id="playground-results-count">0</span> cartas disponíveis</p></div></header>
+        <label class="search-field tool-search" for="playground-search"><span class="search-icon" aria-hidden="true">⌕</span><input id="playground-search" type="search" placeholder="Buscar cartas..." autocomplete="off"></label>
+        <div class="playground-catalog-filters"><select class="field-select" id="playground-type" aria-label="Filtrar por tipo"><option value="">Todos os tipos</option><option value="Criatura">Criatura</option><option value="Ação">Ação</option><option value="Ficha">Ficha</option></select><select class="field-select" id="playground-sort" aria-label="Ordenar cartas"><option value="number">Número</option><option value="name">Nome</option><option value="cost-asc">Menor custo</option><option value="cost-desc">Maior custo</option></select></div>
+        <div class="playground-source-list" id="playground-catalog"></div>
+        <div class="empty-state compact-empty" id="playground-no-results" hidden><h2>Nenhuma carta encontrada</h2><p>PLACEHOLDER</p></div>
+        <div class="data-error compact-error" id="playground-error" hidden><h3>Não foi possível abrir as cartas</h3><p>Confira o registro de coleções em <code>data/collections/index.json</code>.</p></div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer page-width"><a class="footer-brand" href="index.html">trick<span>.</span></a><span>Playground</span><nav aria-label="Navegação do rodapé"><a href="index.html">Início</a><a href="glossario.html">Cartas</a><a href="deckbuilder.html">Deckbuilder</a><a href="tiermaker.html">Tiermaker</a></nav></footer>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

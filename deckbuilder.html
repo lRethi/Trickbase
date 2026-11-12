@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171615">
+  <meta name="description" content="PLACEHOLDER">
+  <title>Deckbuilder — Trick</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/tools.css">
+  <script type="module" src="js/deckbuilder.js"></script>
+</head>
+<body data-page="builder">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Trick — início"><img class="brand-logo" src="assets/images/logo.webp" alt="Trick"><span class="brand-fallback">trick<span class="brand-period">.</span></span></a>
+      <button class="mobile-menu-button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span></button>
+      <nav class="site-navigation" id="site-navigation" aria-label="Navegação principal"><a class="nav-link" href="index.html">Início</a><a class="nav-link" href="glossario.html">Cartas</a><a class="nav-link active" href="deckbuilder.html">Deckbuilder</a><a class="nav-link" href="tiermaker.html">Tiermaker</a><a class="nav-link" href="playground.html">Playground</a></nav>
+      <a class="header-action" href="glossario.html">Explorar cartas <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main class="builder-page page-width">
+    <section class="builder-titlebar">
+      <div><p class="eyebrow"><span class="eyebrow-flower">✳</span> PLACEHOLDER</p><h1>Deckbuilder<span class="title-period">.</span></h1><p>PLACEHOLDER</p></div>
+      <div class="deck-actions"><button class="button button-secondary button-small" id="new-deck">Novo deck</button><button class="button button-secondary button-small" id="import-deck">Importar</button><button class="button button-secondary button-small" id="export-deck">Exportar</button><button class="button button-primary button-small" id="save-deck">Salvar deck</button><input type="file" id="deck-file" accept=".txt,.trickdeck" hidden></div>
+    </section>
+
+    <section class="builder-layout">
+      <section class="card-browser-panel">
+        <div class="browser-heading"><div><h2 id="pool-heading">Cartas</h2><p id="pool-count">PLACEHOLDER</p></div><a class="subtle-link" href="glossario.html">Glossário <span aria-hidden="true">↗</span></a></div>
+        <div class="browser-mode-switch" role="tablist" aria-label="Biblioteca">
+          <button class="browser-mode active" type="button" data-pool-mode="cards" role="tab" aria-selected="true">Cartas</button>
+          <button class="browser-mode" type="button" data-pool-mode="heroes" role="tab" aria-selected="false">Heróis</button>
+        </div>
+        <div class="browser-controls">
+          <label class="search-field browser-search" for="pool-search"><span class="search-icon" aria-hidden="true">⌕</span><input id="pool-search" type="search" placeholder="Buscar por nome, texto ou cor..." autocomplete="off"></label>
+          <select class="field-select browser-type" id="pool-type" aria-label="Filtrar por tipo"><option value="">Todos os tipos</option><option value="Criatura">Criatura</option><option value="Ação">Ação</option><option value="Ficha">Ficha</option></select>
+          <select class="field-select browser-sort" id="pool-sort" aria-label="Ordenar cartas"><option value="number">Número</option><option value="name">Nome</option><option value="cost-asc">Menor custo</option><option value="cost-desc">Maior custo</option></select>
+          <select class="field-select browser-zone" id="pool-zone" aria-label="Adicionar carta a"><option value="mainboard">Adicionar ao Mainboard</option><option value="sideboard">Adicionar ao Sideboard</option></select>
+        </div>
+        <div class="browser-colors" id="pool-colors" aria-label="Filtrar por cor">
+          <button class="color-choice" data-color="mente" aria-label="Mente" title="Mente"><span class="color-swatch color-blue"></span></button>
+          <button class="color-choice" data-color="calma" aria-label="Calma" title="Calma"><span class="color-swatch color-green"></span></button>
+          <button class="color-choice" data-color="ordem" aria-label="Ordem" title="Ordem"><span class="color-swatch color-yellow"></span></button>
+          <button class="color-choice" data-color="corpo" aria-label="Corpo" title="Corpo"><span class="color-swatch color-orange"></span></button>
+          <button class="color-choice" data-color="furia" aria-label="Fúria" title="Fúria"><span class="color-swatch color-red"></span></button>
+          <button class="color-choice" data-color="caos" aria-label="Caos" title="Caos"><span class="color-swatch color-purple"></span></button>
+          <button class="color-choice color-choice-empty" data-color="incolor" aria-label="Sem cor" title="Sem cor">∅</button>
+          <button class="color-choice color-choice-clear" data-color="" aria-label="Limpar filtro de cor" title="Todas as cores">×</button>
+        </div>
+        <div class="pool-grid" id="pool-grid"></div>
+        <div class="hero-pool-grid" id="hero-pool" hidden></div>
+        <div class="empty-state compact-empty" id="pool-empty" hidden><h3>Nenhum resultado encontrado</h3><p>PLACEHOLDER</p></div>
+        <div class="data-error compact-error" id="pool-error" hidden><h3>Não foi possível abrir os dados</h3><p>Confira os arquivos em <code>data/collections/</code>.</p></div>
+      </section>
+
+      <aside class="deck-workspace">
+        <section class="deck-summary">
+          <div class="deck-name-row"><div><label class="eyebrow" for="deck-name">Nome do deck</label><input id="deck-name" class="deck-name-input" value="Novo deck" maxlength="48"></div><div class="saved-decks-wrap"><label class="sr-only" for="saved-decks">Decks salvos</label><select id="saved-decks" class="saved-decks-select"><option value="">Decks salvos</option></select></div></div>
+          <div class="deck-metrics"><div><strong id="deck-size">0</strong><span>cartas</span></div><div><strong id="deck-unique">0</strong><span>únicas</span></div><div><strong id="deck-colors">0</strong><span>cores</span></div></div>
+          <div class="hero-card-slot" id="hero-slot"><div class="hero-slot-empty"><strong>Selecione um Herói</strong><span>PLACEHOLDER</span><button class="button button-secondary button-small" id="choose-hero">Escolher Herói</button></div></div>
+        </section>
+
+        <section class="decklist-section">
+          <div class="decklist-heading"><div><h2>Mainboard</h2><p id="deck-limit-label">PLACEHOLDER</p></div><button class="plain-button" id="clear-list">Limpar</button></div>
+          <div class="deck-list" id="deck-list"></div>
+        </section>
+        <section class="sideboard-section">
+          <div class="decklist-heading"><div><h2>Sideboard</h2><p><strong id="sideboard-size">0</strong> cartas · não conta no limite do deck</p></div></div>
+          <div class="deck-list sideboard-list" id="sideboard-list"></div>
+        </section>
+
+        <section class="deck-analysis">
+          <div class="analysis-heading"><div><h2>Análise</h2><p>PLACEHOLDER</p></div><span class="analysis-flower">✳</span></div>
+          <div class="curve-chart" id="curve-chart"><div class="curve-empty">Adicione cartas para ver a curva.</div></div>
+          <div class="curve-labels"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6+</span></div>
+          <div class="color-distribution" id="color-distribution"></div>
+          <div class="deck-validation" id="deck-validation"></div>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer page-width"><a class="footer-brand" href="index.html">trick<span>.</span></a><span>Deckbuilder</span><nav aria-label="Navegação do rodapé"><a href="index.html">Início</a><a href="glossario.html">Cartas</a><a href="tiermaker.html">Tiermaker</a><a href="playground.html">Playground</a></nav></footer>
+
+  <div class="modal-backdrop" id="card-modal" hidden>
+    <section class="card-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="dialog-close" id="modal-close" aria-label="Fechar">×</button>
+      <div class="dialog-art"><img id="modal-image" src="assets/images/card-back.webp" alt=""></div>
+      <div class="dialog-content"><p class="eyebrow" id="modal-id">Carta de Trick</p><h2 id="modal-title">Carta</h2><div class="dialog-tags" id="modal-tags"></div><p class="dialog-text" id="modal-text"></p><div class="dialog-stats" id="modal-stats"></div><div class="dialog-keywords" id="modal-keywords"></div><div class="dialog-actions"><button class="button button-primary" id="modal-add">Adicionar ao deck</button><button class="button button-secondary" id="modal-hero">Definir como herói</button></div></div>
+    </section>
+  </div>
+  <div class="modal-backdrop" id="hero-modal" hidden>
+    <section class="hero-dialog" role="dialog" aria-modal="true" aria-labelledby="hero-modal-title">
+      <button class="dialog-close" id="hero-modal-close" aria-label="Fechar">×</button>
+      <div class="hero-dialog-art"><img id="hero-modal-image" src="assets/images/card-back.webp" alt=""></div>
+      <div class="hero-dialog-content">
+        <p class="eyebrow" id="hero-modal-colors"></p>
+        <h2 id="hero-modal-title">Herói</h2>
+        <div class="hero-form-switch" id="hero-modal-forms"></div>
+        <p class="hero-ability-cost" id="hero-modal-cost"></p>
+        <p class="hero-ability-text" id="hero-modal-text"></p>
+        <button class="button button-primary" id="hero-modal-select">Selecionar Herói</button>
+      </div>
+    </section>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+{
+  "id": "flowerpower-heroes",
+  "name": "Flower Power",
+  "version": 1,
+  "cards": [
+    {
+      "forma-base": {
+        "id": "aaron",
+        "name": "AARON, Caçador",
+        "colors": [
+          "verde",
+          "vermelho"
+        ],
+        "ability-cost": 2,
+        "ability-text": "TRANSFORMAR: Vire essa carta, então realize Fúria Lycana. | RASTREAR: Procure uma carta no seu deck e coloque-a em sua mão.",
+        "image": "assets/heroes/01_flowerpower/aaronCacador.webp"
+      },
+      "forma-alternativa": {
+        "id": "aaron",
+        "name": "AARON, Fera",
+        "colors": [
+          "verde",
+          "vermelho"
+        ],
+        "ability-cost": 2,
+        "ability-text": "TRANSFORMAR: Vire essa carta, então realize Rastrear. | FÚRIA LYCANA: Conceda +2 de poder à uma criatura.",
+        "image": "assets/heroes/01_flowerpower/aaronFera.webp"
+      }
+    },
+    {
+      "id": "reginauld",
+      "name": "Reginauld",
+      "colors": [
+        "verde",
+        "azul"
+      ],
+      "ability-cost": 1,
+      "ability-text": "CONGELAMENTO ACIDENTAL: Concede -1 de poder à uma criatura.",
+      "image": "assets/heroes/01_flowerpower/reginauld.webp"
+    },
+    {
+      "id": "honor",
+      "name": "Honor",
+      "colors": [
+        "verde",
+        "amarelo"
+      ],
+      "ability-cost": 2,
+      "ability-text": "CURA PELAS MÃOS: Cure 2.",
+      "image": "assets/heroes/01_flowerpower/honor.webp"
+    },
+    {
+      "id": "oni",
+      "name": "Oni",
+      "colors": [
+        "azul",
+        "laranja"
+      ],
+      "ability-cost": 1,
+      "ability-text": "ENSINAMENTOS RONIN: Conceda uma palavra-chave de uma criatura para outra até o final do turno.",
+      "image": "assets/heroes/01_flowerpower/oni.webp"
+    },
+    {
+      "id": "hope&jackpot",
+      "name": "Hope & Jackpot",
+      "colors": [
+        "vermelho",
+        "amarelo"
+      ],
+      "ability-cost": 2,
+      "ability-text": "DUPLA DINÂMICA: Escolha 2 criaturas aliadas. A primeira ganha -1/+2. A segunda ganha +2/-1.",
+      "image": "assets/heroes/01_flowerpower/hope_jackpot.webp"
+    },
+    {
+      "id": "boro",
+      "name": "Boro",
+      "colors": [
+        "laranja",
+        "roxo"
+      ],
+      "ability-cost": 1,
+      "ability-text": "BEBUM: Concede PROVOCAR à qualquer criatura até o final do turno.",
+      "image": "assets/heroes/01_flowerpower/boro.webp"
+    },
+    {
+      "id": "golo",
+      "name": "G.O.L.O.",
+      "colors": [
+        "laranja",
+        "amarelo"
+      ],
+      "ability-cost": 1,
+      "ability-text": "DESLIGAR: SILENCIE uma criatura até o final do turno.",
+      "image": "assets/heroes/01_flowerpower/golo.webp"
+    },
+    {
+      "id": "mungus",
+      "name": "Mungus",
+      "colors": [
+        "azul",
+        "roxo"
+      ],
+      "ability-cost": 3,
+      "ability-text": "DEDO DA MORTE: Causa 1 de dano à uma criatura. Se ela morrer, invoque-a com 1 de vida.",
+      "image": "assets/heroes/01_flowerpower/mungus.webp"
+    },
+    {
+      "id": "mrrrgly",
+      "name": "Mrrgly",
+      "colors": [
+        "amarelo",
+        "roxo"
+      ],
+      "ability-cost": 2,
+      "ability-text": "ERGUER ESCUDO: Conceda BARREIRA a próxima criatura aliada que for invocada nesse turno.",
+      "image": "assets/heroes/01_flowerpower/mrrrgly.webp"
+    },
+    {
+      "id": "fortrix",
+      "name": "Fortrix",
+      "colors": [
+        "vermelho",
+        "roxo"
+      ],
+      "ability-cost": 2,
+      "ability-text": "QUEIMADOR DE ALMAS: Cause 1 de dano a uma criatura. Se ela morrer, também causa 2 de dano ao herói inimigo.",
+      "image": "assets/heroes/01_flowerpower/fortrix.webp"
+    },
+    {
+      "id": "nyx",
+      "name": "Nyx",
+      "colors": [
+        "verde",
+        "roxo"
+      ],
+      "ability-cost": 3,
+      "ability-text": "SEMEADORA ONÍRICA: Invoca dois fungos 1/1.",
+      "image": "assets/heroes/01_flowerpower/nyx.webp"
+    },
+    {
+      "id": "layfer",
+      "name": "Layfer",
+      "colors": [
+        "vermelho",
+        "laranja"
+      ],
+      "ability-cost": 3,
+      "ability-text": "ENTRAR EM FÚRIA: Escolha uma criatura aliada pronta. Ela ataca uma criatura inimiga, recebendo ATROPELAR e poder igual à sua vida atual durante esse ataque.",
+      "image": "assets/heroes/01_flowerpower/layfer.webp"
+    },
+    {
+      "id": "diana",
+      "name": "Diana",
+      "colors": [
+        "azul",
+        "amarelo"
+      ],
+      "ability-cost": 2,
+      "ability-text": "SABEDORIA LUNAR: Olhe a carta do topo do seu deck. Você pode colocá-la no fundo. Compre 1 carta.",
+      "image": "assets/heroes/01_flowerpower/diana.webp"
+    },
+    {
+      "id": "kaysar",
+      "name": "Kaysar",
+      "colors": [
+        "verde",
+        "laranja"
+      ],
+      "ability-cost": 2,
+      "ability-text": "DEVOÇÃO: Concede +1/+1 à uma criatura aliada.",
+      "image": "assets/heroes/01_flowerpower/kaysar.webp"
+    },
+    {
+      "id": "cyberia",
+      "name": "Cyberia",
+      "colors": [
+        "vermelho",
+        "azul"
+      ],
+      "ability-cost": 1,
+      "ability-text": "BRAINSTORM: Olhe as 3 cartas do topo do seu deck, e revele uma ação que encontrar lá. Você pode usá-la pagando 1 a menos.",
+      "image": "assets/heroes/01_flowerpower/cyberia.webp"
+    }
+  ]
+}

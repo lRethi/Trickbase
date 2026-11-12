@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171615">
+  <meta name="description" content="PLACEHOLDER">
+  <title>Tiermaker — Trick</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/tools.css">
+  <script type="module" src="js/tiermaker.js"></script>
+</head>
+<body data-page="tiermaker">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Trick — início"><img class="brand-logo" src="assets/images/logo.webp" alt="Trick"><span class="brand-fallback">trick<span class="brand-period">.</span></span></a>
+      <button class="mobile-menu-button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span></button>
+      <nav class="site-navigation" id="site-navigation" aria-label="Navegação principal"><a class="nav-link" href="index.html">Início</a><a class="nav-link" href="glossario.html">Cartas</a><a class="nav-link" href="deckbuilder.html">Deckbuilder</a><a class="nav-link active" href="tiermaker.html">Tiermaker</a><a class="nav-link" href="playground.html">Playground</a></nav>
+      <a class="header-action" href="glossario.html">Explorar cartas <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main class="page-width tool-page">
+    <section class="page-intro tool-page-intro">
+      <div><p class="eyebrow"><span class="eyebrow-flower">✳</span> PLACEHOLDER</p><h1>Tiermaker<span class="title-period">.</span></h1><p>PLACEHOLDER</p></div>
+      <div class="tool-page-actions"><button class="button button-secondary button-small" id="tier-clear">Limpar tierlist</button><button class="button button-primary button-small" id="tier-export">Exportar imagem <span aria-hidden="true">↗</span></button></div>
+    </section>
+
+    <section class="tiermaker-panel">
+      <header class="tool-panel-heading"><div><h2>Tierlist</h2><p id="tier-summary">PLACEHOLDER</p></div><button class="button button-secondary button-small" id="tier-add">Adicionar tier <span aria-hidden="true">+</span></button></header>
+      <div class="tier-board" id="tier-board" aria-label="Área de classificação"></div>
+    </section>
+
+    <section class="tier-pool-panel">
+      <header class="tool-panel-heading"><div><h2>Cartas disponíveis</h2><p><span id="tier-pool-count">0</span> cartas sem classificação</p></div></header>
+      <div class="tool-catalog-controls">
+        <label class="search-field tool-search" for="tier-search"><span class="search-icon" aria-hidden="true">⌕</span><input id="tier-search" type="search" placeholder="Buscar carta por nome, texto, tipo ou cor..." autocomplete="off"></label>
+        <select class="field-select tool-type-filter" id="tier-type" aria-label="Filtrar por tipo"><option value="">Todos os tipos</option><option value="Criatura">Criatura</option><option value="Ação">Ação</option><option value="Ficha">Ficha</option></select>
+      </div>
+      <div class="tier-selection-bar"><span id="tier-selected-label">Selecione uma carta para adicionar sem arrastar.</span><label for="tier-target" class="sr-only">Tier de destino</label><select class="field-select" id="tier-target"></select><button class="button button-secondary button-small" id="tier-place-selected" disabled>Adicionar ao tier</button><button class="plain-button" id="tier-return-selected" disabled>Devolver ao catálogo</button></div>
+      <div class="tool-card-catalog" id="tier-pool"></div>
+      <div class="empty-state compact-empty" id="tier-empty" hidden><h2>Nenhuma carta encontrada</h2><p>PLACEHOLDER</p></div>
+      <div class="data-error compact-error" id="tier-error" hidden><h3>Não foi possível abrir as cartas</h3><p>Confira o registro de coleções em <code>data/collections/index.json</code>.</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer page-width"><a class="footer-brand" href="index.html">trick<span>.</span></a><span>Tiermaker</span><nav aria-label="Navegação do rodapé"><a href="index.html">Início</a><a href="glossario.html">Cartas</a><a href="deckbuilder.html">Deckbuilder</a><a href="playground.html">Playground</a></nav></footer>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

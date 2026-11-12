@@ -1,0 +1,10 @@
+{
+  "collections": [
+    {
+      "id": "flowerpower",
+      "name": "Flower Power",
+      "path": "data/collections/01_flowerpower/cards.json",
+      "heroesPath": "data/collections/01_flowerpower/heroes.json"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171615">
+  <meta name="description" content="PLACEHOLDER">
+  <title>Cartas — Trick</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/tools.css">
+  <script type="module" src="js/glossary.js"></script>
+</head>
+<body data-page="glossary">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Trick — início"><img class="brand-logo" src="assets/images/logo.webp" alt="Trick"><span class="brand-fallback">trick<span class="brand-period">.</span></span></a>
+      <button class="mobile-menu-button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span></button>
+      <nav class="site-navigation" id="site-navigation" aria-label="Navegação principal"><a class="nav-link" href="index.html">Início</a><a class="nav-link active" href="glossario.html">Cartas</a><a class="nav-link" href="deckbuilder.html">Deckbuilder</a><a class="nav-link" href="tiermaker.html">Tiermaker</a><a class="nav-link" href="playground.html">Playground</a></nav>
+      <a class="header-action" href="deckbuilder.html">Criar deck <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main class="page-width page-main">
+    <section class="page-intro glossary-intro">
+      <div><p class="eyebrow"><span class="eyebrow-flower">✳</span> PLACEHOLDER</p><h1>Glossário de <em>Cartas.</em></h1><p>PLACEHOLDER</p></div>
+      <div class="collection-total" id="collection-total" hidden><strong id="collection-count">0</strong><span>cartas na coleção</span></div>
+    </section>
+
+    <section class="catalog-shell">
+      <aside class="filter-sidebar" aria-label="Filtros de cartas">
+        <div class="filter-sidebar-heading"><h2>Filtros</h2><button class="plain-button" id="clear-filters">Limpar tudo</button></div>
+        <div class="filter-section"><label class="filter-title" for="filter-type">Tipo de carta</label><select class="field-select" id="filter-type"><option value="">Todos os tipos</option><option value="Criatura">Criatura</option><option value="Ação">Ação</option><option value="Ficha">Ficha</option></select></div>
+        <div class="filter-section"><span class="filter-title">Cores</span><div class="color-filter-grid" id="color-filters"><label class="color-filter"><input type="checkbox" value="mente"><span class="color-swatch color-blue"></span>Mente</label><label class="color-filter"><input type="checkbox" value="calma"><span class="color-swatch color-green"></span>Calma</label><label class="color-filter"><input type="checkbox" value="ordem"><span class="color-swatch color-yellow"></span>Ordem</label><label class="color-filter"><input type="checkbox" value="corpo"><span class="color-swatch color-orange"></span>Corpo</label><label class="color-filter"><input type="checkbox" value="furia"><span class="color-swatch color-red"></span>Fúria</label><label class="color-filter"><input type="checkbox" value="caos"><span class="color-swatch color-purple"></span>Caos</label><label class="color-filter"><input type="checkbox" value="incolor">Sem cor</label></div></div>
+        <div class="filter-section"><label class="filter-title" for="filter-subtype">Subtipo</label><input class="field-input" id="filter-subtype" type="search" placeholder="Ex.: Robô, Fungo"></div>
+        <div class="filter-section"><label class="filter-title" for="filter-rarity">Raridade</label><select class="field-select" id="filter-rarity"><option value="">Todas as raridades</option><option>Bronze</option><option>Prata</option><option>Ouro</option><option>Pedra</option><option>Esmeralda</option></select></div>
+        <div class="filter-section"><span class="filter-title">Custo</span><div class="cost-range"><input class="field-input" id="cost-min" type="number" min="0" placeholder="Mín."><span>até</span><input class="field-input" id="cost-max" type="number" min="0" placeholder="Máx."></div></div>
+        <div class="sidebar-note"><span class="sidebar-note-flower">✿</span><p>PLACEHOLDER</p></div>
+      </aside>
+
+      <section class="catalog-results">
+        <div class="catalog-search-row">
+          <label class="search-field" for="card-search"><span class="search-icon" aria-hidden="true">⌕</span><input id="card-search" type="search" placeholder="Buscar cartas por nome, texto, tipo ou habilidade..." autocomplete="off"><kbd>/</kbd></label>
+          <label class="sort-wrap"><span class="sr-only">Ordenar por</span><select class="field-select sort-select" id="sort-select"><option value="number">Número</option><option value="name">Nome</option><option value="cost-asc">Menor custo</option><option value="cost-desc">Maior custo</option></select></label>
+        </div>
+        <p class="search-syntax">Também funciona com <code>nome:</code>, <code>tipo:</code>, <code>texto:</code>, <code>cor:</code> e <code>custo:</code>.</p>
+        <div class="results-heading"><div><strong id="visible-count">Cartas</strong><span id="result-caption">da coleção</span></div><div class="results-controls"><div class="active-filter-chips" id="active-filters"></div><div class="view-switch" aria-label="Visualização"><button class="view-button active" data-view="grid" aria-label="Ver em grade" title="Grade"><span class="grid-glyph"></span></button><button class="view-button" data-view="list" aria-label="Ver em lista" title="Lista"><span class="list-glyph"></span></button></div></div></div>
+        <div class="card-grid" id="card-grid"></div>
+        <div class="empty-state" id="empty-state" hidden><div class="empty-flower">✿</div><h2>Nenhuma carta encontrada</h2><p>Tente outro termo ou remova alguns filtros.</p><button class="button button-secondary" id="empty-clear">Limpar filtros</button></div>
+        <div class="data-error" id="data-error" hidden><div class="error-symbol">✳</div><h2>Não foi possível abrir a coleção</h2><p>Confira se <code>data/collections/flowerpower.json</code> está na raiz do projeto e abra o site por um servidor local, como <code>python -m http.server 8000</code>.</p></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer page-width"><a class="footer-brand" href="index.html">trick<span>.</span></a><span>Glossário de cartas</span><nav aria-label="Navegação do rodapé"><a href="index.html">Início</a><a href="deckbuilder.html">Deckbuilder</a><a href="tiermaker.html">Tiermaker</a><a href="playground.html">Playground</a></nav></footer>
+
+  <div class="modal-backdrop" id="card-modal" hidden>
+    <section class="card-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="dialog-close" id="modal-close" aria-label="Fechar">×</button>
+      <div class="dialog-art"><img id="modal-image" src="assets/images/card-back.webp" alt=""></div>
+      <div class="dialog-content"><p class="eyebrow" id="modal-id">Carta de Trick</p><h2 id="modal-title">Carta</h2><div class="dialog-tags" id="modal-tags"></div><p class="dialog-text" id="modal-text"></p><div class="dialog-stats" id="modal-stats"></div><div class="dialog-keywords" id="modal-keywords"></div><a class="button button-primary dialog-action" id="modal-build" href="deckbuilder.html">Adicionar ao deck <span aria-hidden="true">→</span></a></div>
+    </section>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

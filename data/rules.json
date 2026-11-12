@@ -1,0 +1,12 @@
+{
+  "deckSize": {
+    "minimum": null,
+    "maximum": null,
+    "heroCountsTowardSize": false
+  },
+  "maximumCopiesPerCard": 2,
+  "heroRequired": true,
+  "sideboard": {
+    "countsTowardDeckSize": false
+  }
+}
